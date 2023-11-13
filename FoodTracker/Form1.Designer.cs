@@ -34,12 +34,12 @@
             this.txtFood = new System.Windows.Forms.TextBox();
             this.lblDate = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbMeal = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.grpFood.SuspendLayout();
             this.SuspendLayout();
@@ -55,12 +55,12 @@
             // 
             // grpFood
             // 
-            this.grpFood.Controls.Add(this.button4);
-            this.grpFood.Controls.Add(this.button3);
-            this.grpFood.Controls.Add(this.button2);
+            this.grpFood.Controls.Add(this.btnCancel);
+            this.grpFood.Controls.Add(this.btnDelete);
+            this.grpFood.Controls.Add(this.btnUpdate);
             this.grpFood.Controls.Add(this.cmbMeal);
             this.grpFood.Controls.Add(this.label2);
-            this.grpFood.Controls.Add(this.button1);
+            this.grpFood.Controls.Add(this.btnCreate);
             this.grpFood.Controls.Add(this.dtpDate);
             this.grpFood.Controls.Add(this.lblDate);
             this.grpFood.Controls.Add(this.txtFood);
@@ -99,19 +99,20 @@
             // 
             // dtpDate
             // 
-            this.dtpDate.Location = new System.Drawing.Point(527, 27);
+            this.dtpDate.Location = new System.Drawing.Point(515, 28);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(200, 20);
             this.dtpDate.TabIndex = 3;
             // 
-            // button1
+            // btnCreate
             // 
-            this.button1.Location = new System.Drawing.Point(181, 123);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Create";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCreate.Location = new System.Drawing.Point(181, 123);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(75, 23);
+            this.btnCreate.TabIndex = 4;
+            this.btnCreate.Text = "Create";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // label2
             // 
@@ -130,32 +131,32 @@
             this.cmbMeal.Size = new System.Drawing.Size(121, 21);
             this.cmbMeal.TabIndex = 6;
             // 
-            // button2
+            // btnUpdate
             // 
-            this.button2.Location = new System.Drawing.Point(276, 123);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(276, 123);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 7;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnDelete
             // 
-            this.button3.Location = new System.Drawing.Point(369, 123);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(369, 123);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 8;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnCancel
             // 
-            this.button4.Location = new System.Drawing.Point(466, 123);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Cancel";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnCancel.Location = new System.Drawing.Point(466, 123);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 9;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -176,12 +177,12 @@
         #endregion
         private System.Windows.Forms.DataGridView dgvData;
         private System.Windows.Forms.GroupBox grpFood;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.ComboBox cmbMeal;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.TextBox txtFood;
