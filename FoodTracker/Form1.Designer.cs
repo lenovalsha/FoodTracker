@@ -65,7 +65,7 @@
             this.grpFood.Controls.Add(this.lblDate);
             this.grpFood.Controls.Add(this.txtFood);
             this.grpFood.Controls.Add(this.label1);
-            this.grpFood.Location = new System.Drawing.Point(22, 12);
+            this.grpFood.Location = new System.Drawing.Point(23, 12);
             this.grpFood.Name = "grpFood";
             this.grpFood.Size = new System.Drawing.Size(776, 181);
             this.grpFood.TabIndex = 4;
@@ -106,7 +106,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(187, 128);
+            this.button1.Location = new System.Drawing.Point(181, 123);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -132,7 +132,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(290, 128);
+            this.button2.Location = new System.Drawing.Point(276, 123);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 7;
@@ -141,7 +141,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(388, 128);
+            this.button3.Location = new System.Drawing.Point(369, 123);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 8;
@@ -150,7 +150,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(482, 128);
+            this.button4.Location = new System.Drawing.Point(466, 123);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 9;

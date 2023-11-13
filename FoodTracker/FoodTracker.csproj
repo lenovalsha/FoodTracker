@@ -62,12 +62,35 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311130321532_init1.cs" />
+    <Compile Include="Migrations\202311130321532_init1.designer.cs">
+      <DependentUpon>202311130321532_init1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311130327295_AddMealSeedtoDB.cs" />
+    <Compile Include="Migrations\202311130327295_AddMealSeedtoDB.designer.cs">
+      <DependentUpon>202311130327295_AddMealSeedtoDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311130353073_init3.cs" />
+    <Compile Include="Migrations\202311130353073_init3.designer.cs">
+      <DependentUpon>202311130353073_init3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Food.cs" />
+    <Compile Include="Model\Meal.cs" />
     <Compile Include="Model\myDbContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311130321532_init1.resx">
+      <DependentUpon>202311130321532_init1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311130327295_AddMealSeedtoDB.resx">
+      <DependentUpon>202311130327295_AddMealSeedtoDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311130353073_init3.resx">
+      <DependentUpon>202311130353073_init3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
