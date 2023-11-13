@@ -40,6 +40,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnDisplay = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.grpFood.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +56,7 @@
             // 
             // grpFood
             // 
+            this.grpFood.Controls.Add(this.btnDisplay);
             this.grpFood.Controls.Add(this.btnCancel);
             this.grpFood.Controls.Add(this.btnDelete);
             this.grpFood.Controls.Add(this.btnUpdate);
@@ -158,6 +160,16 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
+            // btnDisplay
+            // 
+            this.btnDisplay.Location = new System.Drawing.Point(701, 152);
+            this.btnDisplay.Name = "btnDisplay";
+            this.btnDisplay.Size = new System.Drawing.Size(75, 23);
+            this.btnDisplay.TabIndex = 10;
+            this.btnDisplay.Text = "Display";
+            this.btnDisplay.UseVisualStyleBackColor = true;
+            this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,6 +199,7 @@
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.TextBox txtFood;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnDisplay;
     }
 }
 
