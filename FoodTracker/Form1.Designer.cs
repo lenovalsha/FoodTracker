@@ -41,6 +41,10 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.txtFood = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnToday = new System.Windows.Forms.Button();
+            this.dtDisplayToDGV = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.grpFood.SuspendLayout();
             this.SuspendLayout();
@@ -48,15 +52,14 @@
             // dgvData
             // 
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvData.Location = new System.Drawing.Point(22, 210);
+            this.dgvData.Location = new System.Drawing.Point(374, 237);
             this.dgvData.MultiSelect = false;
             this.dgvData.Name = "dgvData";
-            this.dgvData.Size = new System.Drawing.Size(776, 368);
+            this.dgvData.Size = new System.Drawing.Size(474, 393);
             this.dgvData.TabIndex = 3;
             // 
             // grpFood
             // 
-            this.grpFood.Controls.Add(this.btnDisplay);
             this.grpFood.Controls.Add(this.btnCancel);
             this.grpFood.Controls.Add(this.btnDelete);
             this.grpFood.Controls.Add(this.btnUpdate);
@@ -73,14 +76,15 @@
             this.grpFood.TabIndex = 4;
             this.grpFood.TabStop = false;
             this.grpFood.Text = "groupBox1";
+            this.grpFood.Enter += new System.EventHandler(this.grpFood_Enter);
             // 
             // btnDisplay
             // 
-            this.btnDisplay.Location = new System.Drawing.Point(701, 152);
+            this.btnDisplay.Location = new System.Drawing.Point(773, 211);
             this.btnDisplay.Name = "btnDisplay";
             this.btnDisplay.Size = new System.Drawing.Size(75, 23);
             this.btnDisplay.TabIndex = 10;
-            this.btnDisplay.Text = "Display";
+            this.btnDisplay.Text = "Display All";
             this.btnDisplay.UseVisualStyleBackColor = true;
             this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
             // 
@@ -92,6 +96,7 @@
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnDelete
             // 
@@ -111,6 +116,7 @@
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // cmbMeal
             // 
@@ -171,11 +177,52 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Food";
             // 
+            // btnToday
+            // 
+            this.btnToday.Location = new System.Drawing.Point(374, 208);
+            this.btnToday.Name = "btnToday";
+            this.btnToday.Size = new System.Drawing.Size(97, 23);
+            this.btnToday.TabIndex = 5;
+            this.btnToday.Text = "Today";
+            this.btnToday.UseVisualStyleBackColor = true;
+            this.btnToday.Click += new System.EventHandler(this.btnToday_Click);
+            // 
+            // dtDisplayToDGV
+            // 
+            this.dtDisplayToDGV.Location = new System.Drawing.Point(513, 211);
+            this.dtDisplayToDGV.Name = "dtDisplayToDGV";
+            this.dtDisplayToDGV.Size = new System.Drawing.Size(191, 20);
+            this.dtDisplayToDGV.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(477, 216);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Date";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(710, 211);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(57, 22);
+            this.btnSearch.TabIndex = 8;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 642);
+            this.Controls.Add(this.btnDisplay);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.dtDisplayToDGV);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnToday);
             this.Controls.Add(this.grpFood);
             this.Controls.Add(this.dgvData);
             this.Name = "Form1";
@@ -184,6 +231,7 @@
             this.grpFood.ResumeLayout(false);
             this.grpFood.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -201,6 +249,10 @@
         private System.Windows.Forms.TextBox txtFood;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDisplay;
+        private System.Windows.Forms.Button btnToday;
+        private System.Windows.Forms.DateTimePicker dtDisplayToDGV;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
 

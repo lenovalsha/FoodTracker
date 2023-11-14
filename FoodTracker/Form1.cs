@@ -20,27 +20,27 @@ namespace FoodTracker
             myContext = new myDbContext();
 
             var meals = myContext.Meals.ToList();
-            foreach(Meal m in meals)
+            foreach (Meal m in meals)
             {
                 cmbMeal.Items.Add(m);
             }
-            RefreshData();
+            ShowAll();
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if(cmbMeal.SelectedItem !=null && txtFood.Text !=String.Empty)
+            if (cmbMeal.SelectedItem != null && txtFood.Text != String.Empty)
             {
-                var newTask = new Model.Food
-                {
-                    Name = txtFood.Text,
-                    MealId = (cmbMeal.SelectedItem as Model.Meal).Id,
-                    FoodDate = dtpDate.Value
-                };
 
-                myContext.Foods.Add(newTask); 
+                myContext.Foods.Add(MakeNewFood());
                 myContext.SaveChanges(); //goes through the context class and looks through the pending changes to add to the database (update, creations, deletions)
-                RefreshData();
+                if(MakeNewFood().FoodDate >= DateTime.Today && MakeNewFood().FoodDate < DateTime.Today.AddDays(1))
+                {
+                    ShowToday();
+                }
+                else
+                ShowAll();
+
             }
             else
             {
@@ -48,33 +48,137 @@ namespace FoodTracker
             }
         }
 
-        private void RefreshData()
+        private void ShowAll()
         {
             BindingSource binding = new BindingSource();
 
             //write a query
             var query = from t in myContext.Foods
-                        orderby t.FoodDate
-                        select new { t.Id, FoodName = t.Name, t.Meal.Name, t.FoodDate }; //we use FoodName = t.Name bc w/o it its giving us an error bc of ambigious
+                        orderby t.FoodDate descending
+                        select new { t.Id,FoodName = t.Name, t.Meal.Name, t.FoodDate }; //we use FoodName = t.Name bc w/o it its giving us an error bc of ambigious
 
             dgvData.DataSource = query.ToList();
+            dgvData.Columns[0].Visible = false;
             dgvData.Refresh();
+            txtFood.Text = string.Empty;
+            dtpDate.Value = DateTime.Now;
+        }
+        private Model.Food MakeNewFood()
+        {
+            var newFood = new Model.Food
+            {
+                Name = txtFood.Text,
+                MealId = (cmbMeal.SelectedItem as Model.Meal).Id,
+                FoodDate = dtpDate.Value
+            };
+            
+            return newFood;
         }
 
         private void btnDisplay_Click(object sender, EventArgs e)
         {
-            RefreshData();
+            ShowAll();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            var f = myContext.Foods.Find((int)dgvData.SelectedCells[0].Value);
+            //this is so that we can select anything from the row and we can delete it
+            var selectedRowIndex = (int)dgvData.SelectedCells[0].RowIndex;
+            int selectedFood = (int)dgvData.Rows[selectedRowIndex].Cells[0].Value;
+            var f = myContext.Foods.Find(selectedFood);
             if (f != null)
             {
                 myContext.Foods.Remove(f);
                 myContext.SaveChanges();
-                RefreshData();
+                ShowAll();
             }
+        }
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            var selectedRowIndex = (int)dgvData.SelectedCells[0].RowIndex;
+            int selectedFood = (int)dgvData.Rows[selectedRowIndex].Cells[0].Value;
+            var f = myContext.Foods.Find(selectedFood);
+            if (btnUpdate.Text == "Update")
+            {
+                if (f != null)
+                {
+                    txtFood.Text = f.Name;
+                    dtpDate.Value = f.FoodDate.Value;
+                    cmbMeal.Text = f.Meal.Name;
+                }
+                btnUpdate.Text = "Save Changes";
+            }
+            else
+            {
+                f.Name = txtFood.Text;
+                f.MealId = (cmbMeal.SelectedItem as Meal).Id;
+                f.FoodDate = dtpDate.Value;
+                myContext.SaveChanges();
+                btnUpdate.Text = "Update";
+                ShowAll();
+            }
+        }
+        private void btnToday_Click(object sender, EventArgs e)
+        {
+           ShowToday();
+        }
+
+        private void grpFood_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            //show the 
+            ShowCertainDate(dtDisplayToDGV.Value);
+        }
+        private void ShowToday()
+        {
+            BindingSource binding = new BindingSource();
+            DateTime endDate = DateTime.Today.AddDays(1);
+            //write a query
+            var query = from t in myContext.Foods
+                        where t.FoodDate >= DateTime.Today && t.FoodDate < endDate
+                        orderby t.MealId
+                        select new { t.Id, FoodName = t.Name, t.Meal.Name, t.FoodDate }; //we use FoodName = t.Name bc w/o it its giving us an error bc of ambigious
+
+            dgvData.DataSource = query.ToList();
+            dgvData.Refresh();
+            dgvData.Columns[0].Visible = false;
+
+            txtFood.Text = string.Empty;
+            dtpDate.Value = DateTime.Now;
+        }
+        private void ShowCertainDate(DateTime date)
+        {
+            BindingSource binding = new BindingSource();
+            DateTime startDate = date.AddDays(-1);
+            DateTime endDate = date.AddDays(1);
+
+            //write a query
+            var query = from t in myContext.Foods
+                        where t.FoodDate >= startDate && t.FoodDate < endDate
+                        orderby t.MealId
+                        select new { t.Id, FoodName = t.Name, t.Meal.Name, t.FoodDate }; //we use FoodName = t.Name bc w/o it its giving us an error bc of ambigious
+
+            dgvData.DataSource = query.ToList();
+            dgvData.Refresh();
+            dgvData.Columns[0].Visible = false;
+
+            txtFood.Text = string.Empty;
+            dtpDate.Value = DateTime.Now;
+        }
+        private void Refresh()
+        {
+            txtFood.Text = string.Empty;
+            dtpDate.Value = DateTime.Now;
+            cmbMeal.Text = string.Empty;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+           Refresh();
         }
     }
 }
