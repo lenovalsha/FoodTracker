@@ -30,17 +30,17 @@
         {
             this.dgvData = new System.Windows.Forms.DataGridView();
             this.grpFood = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtFood = new System.Windows.Forms.TextBox();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.dtpDate = new System.Windows.Forms.DateTimePicker();
-            this.btnCreate = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbMeal = new System.Windows.Forms.ComboBox();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnDisplay = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.cmbMeal = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.txtFood = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.grpFood.SuspendLayout();
             this.SuspendLayout();
@@ -74,37 +74,60 @@
             this.grpFood.TabStop = false;
             this.grpFood.Text = "groupBox1";
             // 
-            // label1
+            // btnDisplay
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Food";
+            this.btnDisplay.Location = new System.Drawing.Point(701, 152);
+            this.btnDisplay.Name = "btnDisplay";
+            this.btnDisplay.Size = new System.Drawing.Size(75, 23);
+            this.btnDisplay.TabIndex = 10;
+            this.btnDisplay.Text = "Display";
+            this.btnDisplay.UseVisualStyleBackColor = true;
+            this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
             // 
-            // txtFood
+            // btnCancel
             // 
-            this.txtFood.Location = new System.Drawing.Point(43, 24);
-            this.txtFood.Name = "txtFood";
-            this.txtFood.Size = new System.Drawing.Size(348, 20);
-            this.txtFood.TabIndex = 1;
+            this.btnCancel.Location = new System.Drawing.Point(466, 123);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 9;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // lblDate
+            // btnDelete
             // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(479, 34);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(30, 13);
-            this.lblDate.TabIndex = 2;
-            this.lblDate.Text = "Date";
+            this.btnDelete.Location = new System.Drawing.Point(369, 123);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 8;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // dtpDate
+            // btnUpdate
             // 
-            this.dtpDate.Location = new System.Drawing.Point(515, 28);
-            this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(200, 20);
-            this.dtpDate.TabIndex = 3;
+            this.btnUpdate.Location = new System.Drawing.Point(276, 123);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 7;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            // 
+            // cmbMeal
+            // 
+            this.cmbMeal.FormattingEnabled = true;
+            this.cmbMeal.Location = new System.Drawing.Point(43, 125);
+            this.cmbMeal.Name = "cmbMeal";
+            this.cmbMeal.Size = new System.Drawing.Size(121, 21);
+            this.cmbMeal.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 128);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Meal";
             // 
             // btnCreate
             // 
@@ -116,59 +139,37 @@
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
-            // label2
+            // dtpDate
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 128);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Meal";
+            this.dtpDate.Location = new System.Drawing.Point(515, 28);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpDate.TabIndex = 3;
             // 
-            // cmbMeal
+            // lblDate
             // 
-            this.cmbMeal.FormattingEnabled = true;
-            this.cmbMeal.Location = new System.Drawing.Point(43, 125);
-            this.cmbMeal.Name = "cmbMeal";
-            this.cmbMeal.Size = new System.Drawing.Size(121, 21);
-            this.cmbMeal.TabIndex = 6;
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(479, 34);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(30, 13);
+            this.lblDate.TabIndex = 2;
+            this.lblDate.Text = "Date";
             // 
-            // btnUpdate
+            // txtFood
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(276, 123);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 7;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.txtFood.Location = new System.Drawing.Point(43, 24);
+            this.txtFood.Name = "txtFood";
+            this.txtFood.Size = new System.Drawing.Size(348, 20);
+            this.txtFood.TabIndex = 1;
             // 
-            // btnDelete
+            // label1
             // 
-            this.btnDelete.Location = new System.Drawing.Point(369, 123);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 8;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(466, 123);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 9;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // btnDisplay
-            // 
-            this.btnDisplay.Location = new System.Drawing.Point(701, 152);
-            this.btnDisplay.Name = "btnDisplay";
-            this.btnDisplay.Size = new System.Drawing.Size(75, 23);
-            this.btnDisplay.TabIndex = 10;
-            this.btnDisplay.Text = "Display";
-            this.btnDisplay.UseVisualStyleBackColor = true;
-            this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(31, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Food";
             // 
             // Form1
             // 

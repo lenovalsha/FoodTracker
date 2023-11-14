@@ -24,7 +24,7 @@ namespace FoodTracker
             {
                 cmbMeal.Items.Add(m);
             }
-
+            RefreshData();
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
@@ -64,6 +64,17 @@ namespace FoodTracker
         private void btnDisplay_Click(object sender, EventArgs e)
         {
             RefreshData();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var f = myContext.Foods.Find((int)dgvData.SelectedCells[0].Value);
+            if (f != null)
+            {
+                myContext.Foods.Remove(f);
+                myContext.SaveChanges();
+                RefreshData();
+            }
         }
     }
 }
