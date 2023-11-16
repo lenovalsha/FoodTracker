@@ -7,14 +7,13 @@ namespace FoodTracker.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class AddMealSeedtoDB : IMigrationMetadata
+    public sealed partial class init5 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddMealSeedtoDB));
-
+        private readonly ResourceManager Resources = new ResourceManager(typeof(init5));
         
         string IMigrationMetadata.Id
         {
-            get { return "202311130327295_AddMealSeedtoDB"; }
+            get { return "202311160318051_init5"; }
         }
         
         string IMigrationMetadata.Source

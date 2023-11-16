@@ -153,7 +153,7 @@ namespace FoodTracker
         private void ShowCertainDate(DateTime date)
         {
             BindingSource binding = new BindingSource();
-            DateTime startDate = date.AddDays(-1);
+            DateTime startDate = date;
             DateTime endDate = date.AddDays(1);
 
             //write a query

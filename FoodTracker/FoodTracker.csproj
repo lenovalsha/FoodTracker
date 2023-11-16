@@ -74,6 +74,10 @@
     <Compile Include="Migrations\202311130353073_init3.designer.cs">
       <DependentUpon>202311130353073_init3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311160318051_init5.cs" />
+    <Compile Include="Migrations\202311160318051_init5.designer.cs">
+      <DependentUpon>202311160318051_init5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Food.cs" />
     <Compile Include="Model\Meal.cs" />
@@ -91,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311130353073_init3.resx">
       <DependentUpon>202311130353073_init3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311160318051_init5.resx">
+      <DependentUpon>202311160318051_init5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

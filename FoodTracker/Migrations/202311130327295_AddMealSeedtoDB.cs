@@ -10,6 +10,7 @@
             Sql("INSERT INTO MEALS (Name) VALUES('Breakfast');");
             Sql("INSERT INTO MEALS (Name) VALUES('Lunch');");
             Sql("INSERT INTO MEALS (Name) VALUES('Supper');");
+            Sql("INSERT INTO MEALS (Name) VALUES('Snack');");
 
         }
 
